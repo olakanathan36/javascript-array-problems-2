@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="./script.js"></script>
+</head>
+<body>
+    <script>
+        // program1
+        for(let i=1;i<=100;i++){
+            if(i%3==0){
+                document.write(" Fizz ");
+            }
+            else if(i%5==0){
+                document.write(" Buzz ");
+            }
+            else if(i%2==0 && i%5==0){
+                document.write(" FizzBuzz ");
+            }
+            else{
+                document.write( i );
+            }
+        }
+
+        // program 2
+
+        let n="madam"
+        let rev=n.split('').reverse().join('')
+        if(n==rev){
+            document.write("palindrome")
+        }
+        else{
+            document.write("not a plaindrome")
+        }
+
+        // program 3
+
+        let arr=[1,2,345,564,675];
+        let max=0;
+        for(let i=0;i<arr.length;i++){
+            if( arr[i]>max){
+                max=arr[i]
+            }
+        }
+        document.write(max)
+
+        // program 4--Write a function that takes a string and returns an object with each character as a key and its number of occurrences as the value
+
+        let str='olakanathan';
+        let obj={};
+        let countvalue=0;
+        for(let i=0;i<str.length;i++){
+            for(let j=i+1;j<str.length;j++){
+                if(str[i]==str[j]){
+                    countvalue=countvalue+1;
+                }
+                else{
+                    obj[str[i]]=countvalue;
+                }
+            }
+            obj[str[i]]=obj[countvalue];
+        }
+        document.write(obj);
+
+        // program5 
+
+        let word="i am olakanathan from ai&ml";
+        let words=word.split(' ');
+        let count=0;
+        let longword=" ";
+        for(let i in words){
+            if(words[i].length>longword.length){
+                longword=words[i]
+            }   
+        }
+        document.write(longword)
+
+        // program 6
+
+         let n=6;
+         let c=1;
+        for(let k=1;k<=n;k++){
+            c*=k;
+        }
+        document.write(c);
+         
+        // program 7 --temperature from Celsius to Fahrenheit
+
+        let Celsius=5;
+        let Fahrenheit;
+        Fahrenheit=(Celsius*9/5)+32;
+        document.write(Fahrenheit);
+    
+
+        // program 8 --Given an array containing n distinct numbers taken from 0, 1, 2, ..., n, find the one that is missing from the array
+
+        let arrays=[0,1,2,3,4,6];
+        let sum=0;
+        let v=arrays.length;
+        for(let i=0;i<arrays.length;i++){
+            sum+=arrays[i];
+        }
+        let total=v*(v+1)/2;
+        document.write(total-sum);
+
+
+    </script>
+</body>
+</html>
